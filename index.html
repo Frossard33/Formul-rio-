@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon-32x32.png" >
+    <title>Jiujitsu Abs</title>
+ <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #0d0d0d, #1f1f1f);
+      color: #fff;
+      padding: 30px 15px;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      background: #161616;
+      padding: 30px;
+      border-radius: 14px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.4);
+      border: 1px solid #2b2b2b;
+    }
+
+    h1 {
+      text-align: center;
+      color: #ffffff;
+      margin-bottom: 10px;
+      font-size: 2rem;
+    }
+
+    .intro {
+      text-align: center;
+      color: #cfcfcf;
+      margin-bottom: 30px;
+    }
+
+    h2 {
+      margin-top: 30px;
+      margin-bottom: 12px;
+      color: #e63946;
+      font-size: 1.2rem;
+      border-left: 4px solid #e63946;
+      padding-left: 10px;
+    }
+
+    label {
+      display: block;
+      margin: 12px 0 6px;
+      font-weight: bold;
+      color: #f2f2f2;
+    }
+
+    input[type="text"],
+    input[type="tel"],
+    input[type="url"],
+    input[type="email"],
+    textarea,
+    select {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #333;
+      border-radius: 8px;
+      background: #222;
+      color: #fff;
+      outline: none;
+      transition: 0.3s;
+    }
+
+    input:focus,
+    textarea:focus,
+    select:focus {
+      border-color: #e63946;
+      box-shadow: 0 0 8px rgba(230, 57, 70, 0.25);
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    .opcoes {
+      margin-top: 8px;
+    }
+
+    .opcoes label {
+      font-weight: normal;
+      margin: 8px 0;
+      display: block;
+      color: #ddd;
+    }
+
+    button {
+      width: 100%;
+      margin-top: 30px;
+      padding: 14px;
+      background: #e63946;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: #c92d3a;
+    }
+
+    .rodape {
+      margin-top: 20px;
+      text-align: center;
+      color: #aaa;
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        padding: 20px;
+      }
+
+      h1 {
+        font-size: 1.6rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Briefing para Criação do Site</h1>
+    <p class="intro">
+      Olá! Para que eu consiga criar o site da sua escola de Jiu-Jitsu dentro das suas expectativas,
+      peço que responda este formulário com o máximo de detalhes possível.
+    </p>
+
+    <form action="https://formspree.io/f/SEU_CODIGO_AQUI" method="POST">
+
+      <h2>1. Informações básicas da academia</h2>
+
+      <label for="nomeAcademia">Nome da academia</label>
+      <input type="text" id="nomeAcademia" name="Nome da academia" required>
+
+      <label for="professor">Nome do professor responsável</label>
+      <input type="text" id="professor" name="Professor responsável" required>
+
+      <label for="graduacao">Graduação / faixa do professor</label>
+      <input type="text" id="graduacao" name="Graduação do professor">
+
+      <label for="tempoAcademia">Há quanto tempo a academia existe?</label>
+      <input type="text" id="tempoAcademia" name="Tempo de existência da academia">
+
+      <h2>2. Sobre a academia</h2>
+
+      <label for="missao">Qual é a missão ou filosofia da academia?</label>
+      <textarea id="missao" name="Missão ou filosofia da academia"></textarea>
+
+      <label for="diferencial">O que diferencia sua academia das outras?</label>
+      <textarea id="diferencial" name="Diferenciais da academia"></textarea>
+
+      <label for="objetivoAlunos">Qual é o principal objetivo dos alunos?</label>
+      <textarea id="objetivoAlunos" name="Objetivo dos alunos"></textarea>
+
+      <h2>3. Público da academia</h2>
+
+      <div class="opcoes">
+        <label><input type="checkbox" name="Público atendido" value="Crianças"> Crianças</label>
+        <label><input type="checkbox" name="Público atendido" value="Adolescentes"> Adolescentes</label>
+        <label><input type="checkbox" name="Público atendido" value="Adultos"> Adultos</label>
+        <label><input type="checkbox" name="Público atendido" value="Feminino"> Feminino</label>
+        <label><input type="checkbox" name="Público atendido" value="Competição"> Competição</label>
+      </div>
+
+      <label for="publicoPrincipal">Qual é o principal público que deseja atrair?</label>
+      <input type="text" id="publicoPrincipal" name="Público principal">
+
+      <h2>4. Conteúdos que devem aparecer no site</h2>
+
+      <div class="opcoes">
+        <label><input type="checkbox" name="Conteúdos do site" value="História da academia"> História da academia</label>
+        <label><input type="checkbox" name="Conteúdos do site" value="História do professor"> História do professor</label>
+        <label><input type="checkbox" name="Conteúdos do site" value="Horários de treino"> Horários de treino</label>
+        <label><input type="checkbox" name="Conteúdos do site" value="Planos e mensalidades"> Planos e mensalidades</label>
+        <label><input type="checkbox" name="Conteúdos do site" value="Fotos"> Fotos</label>
+        <label><input type="checkbox" name="Conteúdos do site" value="Vídeos"> Vídeos</label>
+        <label><input type="checkbox" name="Conteúdos do site" value="Resultados de campeonatos"> Resultados de campeonatos</label>
+        <label><input type="checkbox" name="Conteúdos do site" value="Depoimentos"> Depoimentos de alunos</label>
+      </div>
+
+      <h2>5. Estrutura desejada</h2>
+
+      <label for="paginas">Quais páginas o site deve ter?</label>
+      <textarea id="paginas" name="Páginas desejadas no site" placeholder="Ex: Início, Sobre, Horários, Professores, Galeria, Contato"></textarea>
+
+      <h2>6. Informações de contato</h2>
+
+      <label for="endereco">Endereço da academia</label>
+      <input type="text" id="endereco" name="Endereço da academia">
+
+      <label for="cidade">Cidade</label>
+      <input type="text" id="cidade" name="Cidade">
+
+      <label for="telefone">Telefone / WhatsApp</label>
+      <input type="tel" id="telefone" name="Telefone ou WhatsApp">
+
+      <label for="instagram">Instagram</label>
+      <input type="url" id="instagram" name="Instagram">
+
+      <label for="outrasRedes">Outras redes sociais</label>
+      <input type="text" id="outrasRedes" name="Outras redes sociais">
+
+      <h2>7. Estilo visual</h2>
+
+      <label for="cores">Cores da academia</label>
+      <input type="text" id="cores" name="Cores da academia" placeholder="Ex: preto, vermelho e branco">
+
+      <label for="logo">A academia possui logotipo?</label>
+      <select id="logo" name="Possui logotipo">
+        <option value="">Selecione</option>
+        <option value="Sim">Sim</option>
+        <option value="Não">Não</option>
+      </select>
+
+      <div class="opcoes">
+        <label><input type="radio" name="Estilo do site" value="Simples"> Simples</label>
+        <label><input type="radio" name="Estilo do site" value="Moderno"> Moderno</label>
+        <label><input type="radio" name="Estilo do site" value="Agressivo / luta"> Agressivo / estilo luta</label>
+      </div>
+
+      <h2>8. Materiais disponíveis</h2>
+
+      <label for="materiais">Quais materiais você já possui para usar no site?</label>
+      <textarea id="materiais" name="Materiais disponíveis" placeholder="Ex: logo, fotos da academia, fotos de treinos, vídeos, depoimentos"></textarea>
+
+      <h2>9. Email para retorno</h2>
+
+      <label for="emailCliente">Seu email</label>
+      <input type="email" id="emailCliente" name="Email do cliente" required>
+
+      <input type="hidden" name="_subject" value="Novo briefing recebido - Site Escola de Jiu-Jitsu">
+
+      <button type="submit">Enviar respostas</button>
+    </form>
+
+    <p class="rodape">Obrigado por responder. Essas informações vão ajudar no desenvolvimento do seu site.</p>
+  </div>
+</body>
+</html>
