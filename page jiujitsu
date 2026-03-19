@@ -1,0 +1,2219 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gilson Batista Jiu-Jitsu</title>
+  <meta name="description" content="Base visual para site de academia de jiu-jitsu com foco em força, seriedade, autoridade e conversão de alunos." />
+  <style>
+    :root {
+      --bg: #050505;
+      --bg-soft: #0d0d0d;
+      --bg-card: rgba(255, 255, 255, 0.04);
+      --bg-card-strong: rgba(255, 255, 255, 0.06);
+      --gold: #d4b06a;
+      --gold-2: #8b6a3e;
+      --gold-soft: rgba(212, 176, 106, 0.18);
+      --red: #7a1414;
+      --red-hover: #a61b1b;
+      --white: #f5f5f5;
+      --muted: #bdbdbd;
+      --line: rgba(255, 255, 255, 0.08);
+      --shadow: 0 20px 55px rgba(0, 0, 0, 0.45);
+      --radius: 24px;
+      --container: 1180px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--white);
+      background:
+        radial-gradient(circle at top center, rgba(212,176,106,0.16) 0%, rgba(212,176,106,0.05) 16%, rgba(0,0,0,0) 38%),
+        linear-gradient(135deg, #050505 0%, #101010 38%, #24170f 72%, #8b6a3e 100%);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: min(92%, var(--container));
+      margin: 0 auto;
+    }
+
+    .section {
+      padding: 92px 0;
+    }
+
+    .section-head {
+      margin-bottom: 34px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      font-size: 0.82rem;
+      font-weight: 700;
+      margin-bottom: 14px;
+    }
+
+    .section-title {
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      line-height: 1.05;
+      margin-bottom: 16px;
+    }
+
+    .section-text {
+      max-width: 760px;
+      color: var(--muted);
+      font-size: 1.02rem;
+    }
+
+    .divider {
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(212,176,106,0.4), transparent);
+      margin-top: 28px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 50px;
+      padding: 0 22px;
+      border-radius: 999px;
+      font-weight: 700;
+      transition: 0.25s ease;
+      border: 1px solid transparent;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-primary {
+      color: white;
+      background: linear-gradient(135deg, var(--red) 0%, var(--red-hover) 100%);
+      box-shadow: 0 10px 28px rgba(122, 20, 20, 0.36);
+    }
+
+    .btn-secondary {
+      background: rgba(255,255,255,0.03);
+      border-color: rgba(212,176,106,0.36);
+      color: var(--gold);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(212,176,106,0.08);
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(5, 5, 5, 0.78);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .nav {
+      min-height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .brand-mark {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      border: 1px solid rgba(212,176,106,0.32);
+      background:
+        radial-gradient(circle at 35% 28%, #e3c588 0%, #c99d59 25%, #8b6a3e 55%, #111111 100%);
+      box-shadow: inset 0 0 18px rgba(0,0,0,0.48);
+    }
+
+    .brand-text strong {
+      display: block;
+      font-size: 1rem;
+      letter-spacing: 0.03em;
+    }
+
+    .brand-text span {
+      display: block;
+      color: var(--muted);
+      font-size: 0.82rem;
+      margin-top: 2px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+
+    .nav-links a:hover {
+      color: var(--gold);
+    }
+
+    .nav-cta {
+      min-height: 42px;
+      padding: 0 18px;
+      font-size: 0.9rem;
+    }
+
+    .hero {
+      padding: 86px 0 62px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      align-items: center;
+      gap: 34px;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.8rem, 6vw, 5.4rem);
+      line-height: 0.96;
+      max-width: 760px;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 span {
+      color: var(--gold);
+    }
+
+    .hero p {
+      color: var(--muted);
+      font-size: 1.08rem;
+      max-width: 640px;
+      margin-bottom: 28px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 26px;
+    }
+
+    .hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .badge {
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.06);
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .hero-card {
+      position: relative;
+      min-height: 560px;
+      border-radius: 30px;
+      overflow: hidden;
+      border: 1px solid rgba(212,176,106,0.16);
+      background:
+        radial-gradient(circle at top center, rgba(212,176,106,0.28), rgba(0,0,0,0) 42%),
+        linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.01)),
+        linear-gradient(160deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+      box-shadow: var(--shadow);
+      display: flex;
+      align-items: flex-end;
+      padding: 26px;
+    }
+
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      inset: 18px;
+      border-radius: 22px;
+      border: 1px solid rgba(212,176,106,0.10);
+      pointer-events: none;
+    }
+
+    .hero-card::after {
+      content: "LOGO / FOTO DA ACADEMIA";
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      font-size: 0.95rem;
+      letter-spacing: 0.18em;
+      color: rgba(255,255,255,0.12);
+      text-transform: uppercase;
+      pointer-events: none;
+    }
+
+    .hero-box {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      padding: 18px;
+      border-radius: 20px;
+      background: rgba(0,0,0,0.42);
+      border: 1px solid rgba(255,255,255,0.06);
+      backdrop-filter: blur(6px);
+    }
+
+    .hero-box h3 {
+      color: var(--gold);
+      font-size: 1.1rem;
+      margin-bottom: 8px;
+    }
+
+    .hero-box p {
+      margin: 0;
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+
+    .stats {
+      margin-top: 28px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .stat {
+      padding: 24px 16px;
+      text-align: center;
+      border-radius: 20px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.06);
+      backdrop-filter: blur(6px);
+    }
+
+    .stat strong {
+      display: block;
+      color: var(--gold);
+      font-size: 1.9rem;
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .stat span {
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 34px;
+      align-items: center;
+    }
+
+    .visual-box,
+    .content-box,
+    .card,
+    .contact-card,
+    .pricing-card,
+    .testimonial,
+    .gallery-item,
+    .schedule-card,
+    .faq-item,
+    .cta-box {
+      background: var(--bg-card);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .visual-box {
+      min-height: 470px;
+      position: relative;
+      overflow: hidden;
+      padding: 28px;
+      display: flex;
+      align-items: flex-end;
+      background:
+        radial-gradient(circle at top center, rgba(212,176,106,0.20), rgba(0,0,0,0) 38%),
+        linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.01));
+    }
+
+    .visual-box::before {
+      content: "FOTO DO PROFESSOR / ACADEMIA";
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      font-size: 0.95rem;
+      letter-spacing: 0.16em;
+      color: rgba(255,255,255,0.12);
+      text-transform: uppercase;
+    }
+
+    .visual-box .tag {
+      position: relative;
+      z-index: 2;
+      display: inline-block;
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: rgba(0,0,0,0.42);
+      border: 1px solid rgba(212,176,106,0.20);
+      color: var(--gold);
+      font-weight: 700;
+    }
+
+    .content-box {
+      padding: 32px;
+    }
+
+    .content-box p {
+      color: var(--muted);
+      margin-bottom: 14px;
+    }
+
+    .info-list {
+      list-style: none;
+      display: grid;
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .info-list li {
+      color: var(--muted);
+      padding-left: 18px;
+      position: relative;
+    }
+
+    .info-list li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: var(--gold);
+      font-weight: 700;
+    }
+
+    .cards-3,
+    .cards-4,
+    .testimonials,
+    .gallery-grid,
+    .pricing-grid,
+    .faq-grid,
+    .contact-grid {
+      display: grid;
+      gap: 22px;
+    }
+
+    .cards-3 { grid-template-columns: repeat(3, 1fr); }
+    .cards-4 { grid-template-columns: repeat(4, 1fr); }
+    .testimonials { grid-template-columns: repeat(3, 1fr); }
+    .gallery-grid { grid-template-columns: repeat(3, 1fr); }
+    .pricing-grid { grid-template-columns: repeat(3, 1fr); }
+    .faq-grid { grid-template-columns: repeat(2, 1fr); }
+    .contact-grid { grid-template-columns: 1.1fr 0.9fr; align-items: start; }
+
+    .card,
+    .pricing-card,
+    .testimonial,
+    .schedule-card,
+    .faq-item,
+    .contact-card,
+    .cta-box {
+      padding: 26px;
+    }
+
+    .card h3,
+    .pricing-card h3,
+    .testimonial h3,
+    .schedule-card h3,
+    .contact-card h3,
+    .faq-item h3,
+    .cta-box h3 {
+      color: var(--gold);
+      font-size: 1.18rem;
+      margin-bottom: 12px;
+    }
+
+    .card p,
+    .pricing-card p,
+    .testimonial p,
+    .schedule-card p,
+    .contact-card p,
+    .faq-item p,
+    .cta-box p {
+      color: var(--muted);
+      font-size: 0.98rem;
+    }
+
+    .mini-label {
+      display: inline-block;
+      color: var(--gold);
+      border: 1px solid rgba(212,176,106,0.24);
+      padding: 7px 10px;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-bottom: 14px;
+      font-weight: 700;
+    }
+
+    .card ul,
+    .pricing-card ul,
+    .schedule-card ul,
+    .contact-list {
+      list-style: none;
+      display: grid;
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    .card li,
+    .pricing-card li,
+    .schedule-card li,
+    .contact-list li {
+      color: var(--muted);
+      padding-left: 18px;
+      position: relative;
+    }
+
+    .card li::before,
+    .pricing-card li::before,
+    .schedule-card li::before,
+    .contact-list li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: var(--gold);
+      font-weight: 700;
+    }
+
+    .schedule-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .price {
+      font-size: 2.2rem;
+      color: var(--gold);
+      font-weight: 700;
+      line-height: 1;
+      margin: 10px 0 12px;
+    }
+
+    .pricing-card.featured {
+      border-color: rgba(212,176,106,0.30);
+      background:
+        radial-gradient(circle at top center, rgba(212,176,106,0.12), rgba(0,0,0,0) 46%),
+        rgba(255,255,255,0.05);
+      transform: translateY(-6px);
+    }
+
+    .gallery-item {
+      position: relative;
+      min-height: 260px;
+      overflow: hidden;
+      border-radius: 24px;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
+      border: 1px solid rgba(255,255,255,0.07);
+    }
+
+    .gallery-item::before {
+      content: attr(data-label);
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      color: rgba(255,255,255,0.13);
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-size: 0.92rem;
+    }
+
+    .gallery-item::after {
+      content: "";
+      position: absolute;
+      inset: auto 0 0 0;
+      height: 90px;
+      background: linear-gradient(180deg, rgba(0,0,0,0), rgba(0,0,0,0.82));
+    }
+
+    .gallery-caption {
+      position: absolute;
+      left: 20px;
+      right: 20px;
+      bottom: 18px;
+      z-index: 2;
+    }
+
+    .gallery-caption strong {
+      display: block;
+      font-size: 1rem;
+      margin-bottom: 4px;
+    }
+
+    .gallery-caption span {
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .testimonial .author {
+      margin-top: 18px;
+      padding-top: 16px;
+      border-top: 1px solid rgba(255,255,255,0.07);
+      color: var(--gold);
+      font-weight: 700;
+    }
+
+    .contact-card strong {
+      color: var(--white);
+    }
+
+    .student-showcase {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 22px;
+      align-items: stretch;
+    }
+
+    .admin-preview,
+    .student-journey,
+    .feature-grid,
+    .report-grid,
+    .presence-grid,
+    .belt-roadmap,
+    .timeline-grid {
+      display: grid;
+      gap: 22px;
+    }
+
+    .admin-preview {
+      grid-template-columns: 0.95fr 1.05fr;
+      align-items: start;
+    }
+
+    .feature-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .report-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .presence-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .timeline-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .student-journey {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .belt-roadmap {
+      grid-template-columns: repeat(5, 1fr);
+    }
+
+    .login-mock,
+    .dashboard-mock,
+    .dash-card,
+    .student-table,
+    .student-banner,
+    .admin-sidebar,
+    .admin-content,
+    .admin-widget,
+    .roadmap-card,
+    .journey-card,
+    .report-card,
+    .presence-card,
+    .timeline-card {
+      background: var(--bg-card);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .login-mock,
+    .dashboard-mock,
+    .admin-sidebar,
+    .admin-content,
+    .roadmap-card,
+    .journey-card,
+    .report-card,
+    .presence-card,
+    .timeline-card {
+      padding: 26px;
+    }
+
+    .login-mock {
+      background:
+        radial-gradient(circle at top center, rgba(212,176,106,0.16), rgba(0,0,0,0) 42%),
+        rgba(255,255,255,0.04);
+    }
+
+    .login-topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 22px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .login-pill {
+      padding: 7px 12px;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      color: var(--gold);
+      border: 1px solid rgba(212,176,106,0.24);
+      background: rgba(255,255,255,0.03);
+    }
+
+    .mock-field {
+      margin-bottom: 14px;
+    }
+
+    .mock-field label {
+      display: block;
+      font-size: 0.88rem;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+
+    .mock-input {
+      width: 100%;
+      min-height: 52px;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,0.08);
+      background: rgba(255,255,255,0.03);
+      padding: 0 16px;
+      color: rgba(255,255,255,0.55);
+      display: flex;
+      align-items: center;
+    }
+
+    .mock-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .student-note {
+      margin-top: 18px;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .dashboard-mock {
+      display: grid;
+      gap: 18px;
+    }
+
+    .student-banner {
+      padding: 20px;
+      background:
+        linear-gradient(135deg, rgba(122,20,20,0.22), rgba(212,176,106,0.10)),
+        rgba(255,255,255,0.04);
+    }
+
+    .student-banner strong {
+      display: block;
+      color: var(--gold);
+      font-size: 1.1rem;
+      margin-bottom: 8px;
+    }
+
+    .dash-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+    }
+
+    .dash-card {
+      padding: 18px;
+      min-height: 112px;
+    }
+
+    .dash-card span {
+      display: block;
+      color: var(--muted);
+      font-size: 0.84rem;
+      margin-bottom: 8px;
+    }
+
+    .dash-card strong {
+      display: block;
+      color: var(--gold);
+      font-size: 1.5rem;
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+
+    .dash-card p {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .student-table {
+      padding: 18px;
+    }
+
+    .table-head,
+    .table-row {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr 1fr;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .table-head {
+      color: var(--gold);
+      font-size: 0.84rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding-bottom: 12px;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      margin-bottom: 10px;
+    }
+
+    .table-row {
+      min-height: 54px;
+      color: var(--muted);
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      font-size: 0.94rem;
+    }
+
+    .table-row:last-child {
+      border-bottom: 0;
+    }
+
+    .status-ok,
+    .status-warn,
+    .belt-tag,
+    .nav-chip,
+    .presence-tag {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 32px;
+      padding: 0 10px;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      width: fit-content;
+    }
+
+    .status-ok {
+      color: #d5f5da;
+      background: rgba(32, 108, 54, 0.32);
+      border: 1px solid rgba(102, 187, 106, 0.18);
+    }
+
+    .status-warn {
+      color: #ffe3b4;
+      background: rgba(122, 78, 20, 0.26);
+      border: 1px solid rgba(212,176,106,0.18);
+    }
+
+    .belt-tag,
+    .nav-chip,
+    .presence-tag {
+      color: var(--white);
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .admin-sidebar {
+      background:
+        radial-gradient(circle at top center, rgba(212,176,106,0.14), rgba(0,0,0,0) 40%),
+        rgba(255,255,255,0.04);
+    }
+
+    .admin-brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 22px;
+      padding-bottom: 18px;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .admin-dot {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 35% 28%, #e3c588 0%, #c99d59 25%, #8b6a3e 55%, #111111 100%);
+      border: 1px solid rgba(212,176,106,0.3);
+    }
+
+    .admin-menu {
+      display: grid;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .admin-menu-item {
+      min-height: 52px;
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 16px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.05);
+      color: var(--muted);
+    }
+
+    .admin-menu-item strong {
+      color: var(--white);
+      font-size: 0.96rem;
+    }
+
+    .admin-content {
+      display: grid;
+      gap: 18px;
+    }
+
+    .admin-topbar {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      align-items: center;
+      padding-bottom: 14px;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .admin-topbar p {
+      color: var(--muted);
+      margin: 6px 0 0;
+    }
+
+    .admin-top-actions {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .admin-widget {
+      padding: 18px;
+    }
+
+    .admin-widget h4,
+    .report-card h4,
+    .presence-card h4,
+    .roadmap-card h4,
+    .journey-card h4,
+    .timeline-card h4 {
+      color: var(--gold);
+      margin-bottom: 10px;
+      font-size: 1rem;
+    }
+
+    .admin-widget p,
+    .report-card p,
+    .presence-card p,
+    .roadmap-card p,
+    .journey-card p,
+    .timeline-card p {
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    .mini-bar {
+      width: 100%;
+      height: 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.05);
+      overflow: hidden;
+      margin-top: 14px;
+      border: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .mini-bar span {
+      display: block;
+      height: 100%;
+      background: linear-gradient(90deg, rgba(212,176,106,0.75), rgba(122,20,20,0.9));
+      border-radius: 999px;
+    }
+
+    .roadmap-card {
+      text-align: center;
+      min-height: 220px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .roadmap-card strong {
+      display: block;
+      font-size: 1.35rem;
+      color: var(--white);
+      margin-bottom: 10px;
+    }
+
+    .roadmap-card .belt-badge {
+      width: 64px;
+      height: 10px;
+      border-radius: 999px;
+      margin: 0 auto 18px;
+      background: rgba(255,255,255,0.18);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .journey-card,
+    .report-card,
+    .presence-card,
+    .timeline-card {
+      min-height: 190px;
+    }
+
+    .journey-card strong,
+    .report-card strong,
+    .presence-card strong,
+    .timeline-card strong {
+      display: block;
+      color: var(--white);
+      font-size: 1.1rem;
+      margin-bottom: 12px;
+    }
+
+    .timeline-step {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      color: var(--gold);
+      border: 1px solid rgba(212,176,106,0.24);
+      background: rgba(255,255,255,0.03);
+      margin-bottom: 14px;
+      font-weight: 700;
+    }
+
+    .map-box {
+      min-height: 100%;
+      padding: 26px;
+      border-radius: var(--radius);
+      background:
+        radial-gradient(circle at top center, rgba(212,176,106,0.16), rgba(0,0,0,0) 40%),
+        rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.07);
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 22px;
+    }
+
+    .map-preview {
+      min-height: 320px;
+      border-radius: 20px;
+      border: 1px solid rgba(212,176,106,0.18);
+      background:
+        linear-gradient(135deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
+      display: grid;
+      place-items: center;
+      color: rgba(255,255,255,0.13);
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+    }
+
+    .cta-section {
+      padding-top: 40px;
+    }
+
+    .cta-box {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 22px;
+      align-items: center;
+      background:
+        radial-gradient(circle at top center, rgba(212,176,106,0.18), rgba(0,0,0,0) 38%),
+        rgba(255,255,255,0.04);
+    }
+
+    .cta-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      justify-content: flex-end;
+    }
+
+    .footer {
+      padding: 34px 0 50px;
+      color: var(--muted);
+    }
+
+    .footer-grid {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .floating-whatsapp {
+      position: fixed;
+      right: 22px;
+      bottom: 22px;
+      z-index: 999;
+    }
+
+    .floating-whatsapp a {
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: white;
+      background: linear-gradient(135deg, var(--red), var(--red-hover));
+      box-shadow: 0 18px 35px rgba(122,20,20,0.34);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    @media (max-width: 1100px) {
+      .student-showcase,
+      .admin-preview,
+      .hero-grid,
+      .grid-2,
+      .contact-grid,
+      .cta-box {
+        grid-template-columns: 1fr;
+      }
+
+      .dash-grid,
+      .feature-grid,
+      .timeline-grid,
+      .cards-4 {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .cards-3,
+      .gallery-grid,
+      .pricing-grid,
+      .testimonials,
+      .schedule-grid,
+      .faq-grid,
+      .report-grid,
+      .presence-grid,
+      .student-journey,
+      .belt-roadmap {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .cta-actions {
+        justify-content: flex-start;
+      }
+    }
+    }
+
+    @media (max-width: 820px) {
+      .dash-grid,
+      .table-head,
+      .table-row,
+      .feature-grid,
+      .report-grid,
+      .presence-grid,
+      .student-journey,
+      .belt-roadmap,
+      .timeline-grid,
+      .stats,
+      .cards-4,
+      .cards-3,
+      .gallery-grid,
+      .pricing-grid,
+      .testimonials,
+      .schedule-grid,
+      .faq-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .nav {
+        flex-direction: column;
+        padding: 16px 0;
+      }
+
+      .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .section {
+        padding: 76px 0;
+      }
+
+      .hero {
+        padding-top: 52px;
+      }
+
+      .hero-card,
+      .visual-box {
+        min-height: 380px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a href="#inicio" class="brand">
+        <div class="brand-mark"></div>
+        <div class="brand-text">
+          <strong>Gilson Batista Jiu-Jitsu</strong>
+          <span>Força, disciplina e evolução</span>
+        </div>
+      </a>
+
+      <nav class="nav-links">
+        <a href="#sobre">Sobre</a>
+        <a href="#historia">História</a>
+        <a href="#professor">Professor</a>
+        <a href="#modalidades">Modalidades</a>
+        <a href="#graduacao">Graduação</a>
+        <a href="#loja">Loja</a>
+        <a href="#horarios">Horários</a>
+        <a href="#planos">Planos</a>
+        <a href="#area-aluno" class="btn btn-secondary nav-cta">Login de alunos</a>
+        <a href="#contato">Contato</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="container">
+        <div class="hero-grid">
+          <div>
+            <span class="eyebrow">Brazilian Jiu-Jitsu</span>
+            <h1>Treine com <span>seriedade</span>, técnica e mentalidade de campeão.</h1>
+            <p>
+              Uma base de site pensada para transmitir autoridade, tradição e impacto visual. Ideal para apresentar a academia,
+              fortalecer a marca do professor Gilson Batista e converter visitantes em novos alunos.
+            </p>
+
+            <div class="hero-actions">
+              <a href="#contato" class="btn btn-primary">Agendar aula experimental</a>
+              <a href="#sobre" class="btn btn-secondary">Conhecer a estrutura</a>
+            </div>
+
+            <div class="hero-badges">
+              <div class="badge">Professor Gilson Batista • Faixa Preta</div>
+              <div class="badge">Turmas para crianças, iniciantes e adultos</div>
+              <div class="badge">Equipe competidora e ambiente familiar</div>
+            </div>
+          </div>
+
+          <div class="hero-card">
+            <div class="hero-box">
+              <h3>Apresentação visual premium</h3>
+              <p>
+                Aqui pode entrar a logo principal, uma foto marcante do professor, da equipe ou da fachada da academia para causar impacto imediato.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="stats">
+          <div class="stat">
+            <strong>+10</strong>
+            <span>Anos de dedicação ao jiu-jitsu</span>
+          </div>
+          <div class="stat">
+            <strong>100%</strong>
+            <span>Foco em disciplina e evolução</span>
+          </div>
+          <div class="stat">
+            <strong>Vagas</strong>
+            <span>Turmas por nível e objetivo</span>
+          </div>
+          <div class="stat">
+            <strong>CTA</strong>
+            <span>Site pensado para gerar contato</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="sobre">
+      <div class="container">
+        <div class="grid-2">
+          <div class="content-box">
+            <span class="eyebrow">Sobre a academia</span>
+            <h2 class="section-title">Uma identidade de respeito, força e tradição.</h2>
+            <p>
+              Esta estrutura foi pensada para que o cliente enxergue um site com presença visual forte, linguagem profissional e foco em conversão.
+              A proposta é unir estética premium com clareza nas informações, destacando a filosofia da academia e o valor do professor.
+            </p>
+            <p>
+              O jiu-jitsu aqui é apresentado como muito mais que treino físico: é disciplina, autoconfiança, defesa pessoal, técnica e mentalidade.
+              Esse posicionamento fortalece a marca e aumenta a percepção de valor para novos alunos.
+            </p>
+            <ul class="info-list">
+              <li>Visual escuro com dourado envelhecido e vermelho de impacto</li>
+              <li>Estrutura ideal para academia, professor ou equipe de competição</li>
+              <li>Foco em autoridade, confiança e geração de leads</li>
+              <li>Seções preparadas para fotos, depoimentos, horários e localização</li>
+            </ul>
+          </div>
+
+          <div class="visual-box">
+            <span class="tag">Espaço para foto da academia</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="historia">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Nossa história</span>
+          <h2 class="section-title">Tradição construída no tatame</h2>
+          <p class="section-text">
+            Este bloco foi pensado para contar a origem da academia, fortalecer a conexão emocional com o público e mostrar que existe uma história sólida por trás da marca.
+          </p>
+        </div>
+
+        <div class="grid-2">
+          <div class="content-box">
+            <span class="mini-label">História da academia</span>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer volutpat, nibh at bibendum cursus, turpis massa viverra augue, non mattis sem tortor non purus. Sed posuere, eros vitae volutpat pulvinar, mauris libero semper lorem, eget faucibus justo tortor sed urna. Donec vitae dui magna. Praesent tristique varius mi, vitae feugiat risus gravida et.
+            </p>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec faucibus, nisl sit amet blandit suscipit, nisl nunc convallis augue, sit amet tristique justo velit sed metus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nulla facilisi. Cras euismod, massa at facilisis vulputate, sem lorem efficitur nisi, vitae egestas arcu mauris nec nibh.
+            </p>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sodales, sem vel laoreet vulputate, justo est convallis augue, nec auctor lorem risus nec velit. Aenean et sapien at velit tincidunt tristique. Mauris semper, elit eu gravida pulvinar, lectus erat malesuada elit, non ultrices lorem est nec neque.
+            </p>
+          </div>
+
+          <div class="visual-box">
+            <span class="tag">Linha do tempo / fotos antigas / evolução da academia</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="professor">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Professor responsável</span>
+          <h2 class="section-title">Gilson Batista • Faixa Preta</h2>
+          <p class="section-text">
+            Esta seção valoriza a história do professor e fortalece a credibilidade da academia. É uma das partes mais importantes para transmitir confiança ao visitante.
+          </p>
+          <div class="divider"></div>
+        </div>
+
+        <div class="grid-2">
+          <div class="visual-box">
+            <span class="tag">Foto oficial do Professor Gilson Batista</span>
+          </div>
+
+          <div class="content-box">
+            <span class="mini-label">Autoridade e confiança</span>
+            <p>
+              Professor <strong>Gilson Batista</strong>, faixa preta de jiu-jitsu, com foco em ensino técnico, disciplina, respeito e evolução contínua dos alunos.
+              Aqui pode entrar uma apresentação mais pessoal, história no esporte, linhagem, participação em competições e filosofia de ensino.
+            </p>
+            <p>
+              Esse bloco é ideal para mostrar o professor como referência da academia, reforçando experiência, seriedade e compromisso com a formação técnica e humana dos praticantes.
+            </p>
+            <ul class="info-list">
+              <li>Faixa preta e liderança técnica da academia</li>
+              <li>Trabalho com iniciantes, intermediários, avançados e competição</li>
+              <li>Foco em defesa pessoal, condicionamento e evolução individual</li>
+              <li>Metodologia com disciplina, constância e respeito</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="diferenciais">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Diferenciais</span>
+          <h2 class="section-title">Por que treinar aqui?</h2>
+          <p class="section-text">
+            Uma seção importante para destacar o valor da academia e ajudar o visitante a decidir. Pode ser usada com textos curtos e diretos, fáceis de escanear.
+          </p>
+        </div>
+
+        <div class="cards-4">
+          <article class="card">
+            <span class="mini-label">Técnica</span>
+            <h3>Treino com fundamento</h3>
+            <p>Ensino estruturado para desenvolver base sólida, consciência corporal, timing e entendimento técnico do jogo.</p>
+          </article>
+
+          <article class="card">
+            <span class="mini-label">Disciplina</span>
+            <h3>Ambiente de respeito</h3>
+            <p>Uma cultura de treino séria, acolhedora e disciplinada, ideal para quem busca evolução real dentro e fora do tatame.</p>
+          </article>
+
+          <article class="card">
+            <span class="mini-label">Objetivo</span>
+            <h3>Para vários perfis</h3>
+            <p>Estrutura para quem quer saúde, defesa pessoal, rotina, confiança, competição ou desenvolvimento técnico no esporte.</p>
+          </article>
+
+          <article class="card">
+            <span class="mini-label">Marca</span>
+            <h3>Presença forte</h3>
+            <p>Site pensado para valorizar a identidade visual da academia e transmitir autoridade logo no primeiro contato.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="modalidades">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Modalidades e turmas</span>
+          <h2 class="section-title">Estrutura de aulas para diferentes objetivos</h2>
+          <p class="section-text">
+            Esta parte ajuda o cliente a visualizar como o site pode apresentar as opções da academia de forma clara e atrativa.
+          </p>
+        </div>
+
+        <div class="cards-3">
+          <article class="card">
+            <span class="mini-label">Iniciantes</span>
+            <h3>Jiu-jitsu do zero</h3>
+            <p>Ideal para quem nunca treinou e quer aprender base, posições, movimentação, defesa pessoal e adaptação ao ambiente de treino.</p>
+            <ul>
+              <li>Fundamentos essenciais</li>
+              <li>Introdução segura ao tatame</li>
+              <li>Construção de confiança</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <span class="mini-label">Adulto</span>
+            <h3>Turmas regulares</h3>
+            <p>Treinos voltados para evolução técnica, condicionamento físico, disciplina e desenvolvimento contínuo, respeitando o nível do aluno.</p>
+            <ul>
+              <li>Técnica e repetição</li>
+              <li>Drills e situações reais</li>
+              <li>Evolução gradual</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <span class="mini-label">Performance</span>
+            <h3>Competição e aperfeiçoamento</h3>
+            <p>Para alunos que desejam elevar o nível, fortalecer o jogo e se preparar com seriedade para campeonatos ou desempenho avançado.</p>
+            <ul>
+              <li>Estratégia de combate</li>
+              <li>Treino específico</li>
+              <li>Alto nível de exigência</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="graduacao">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Graduação adulta</span>
+          <h2 class="section-title">Exemplo de progressão para apresentar no site</h2>
+          <p class="section-text">
+            Esta seção pode explicar ao aluno como funciona a evolução na academia. Abaixo, o texto está em formato ilustrativo, usando "X aulas" como placeholder para você ajustar depois com a regra real definida pela equipe.
+          </p>
+        </div>
+
+        <div class="cards-3">
+          <article class="card">
+            <span class="mini-label">Faixa branca</span>
+            <h3>Base inicial</h3>
+            <p>Primeira etapa da jornada, com foco em fundamentos, postura, defesa, movimentação e adaptação ao ritmo de treino.</p>
+            <ul>
+              <li>Progressão inicial: X aulas</li>
+              <li>Construção de base técnica</li>
+              <li>Disciplina e frequência</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <span class="mini-label">Faixa azul</span>
+            <h3>Consolidação técnica</h3>
+            <p>Fase de maior entendimento do jogo, com evolução em raspagens, passagens, escapes e controle posicional.</p>
+            <ul>
+              <li>Para chegar aqui: X aulas</li>
+              <li>Maior repertório técnico</li>
+              <li>Consistência no treino</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <span class="mini-label">Faixa roxa</span>
+            <h3>Aprofundamento do jogo</h3>
+            <p>Momento em que o aluno demonstra leitura tática mais madura, domínio de sequências e maior autonomia técnica.</p>
+            <ul>
+              <li>Para chegar aqui: X aulas</li>
+              <li>Capacidade de adaptação</li>
+              <li>Refinamento do estilo</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <span class="mini-label">Faixa marrom</span>
+            <h3>Lapidação avançada</h3>
+            <p>Etapa de alto nível, com foco em precisão, pressão, estratégia, liderança no treino e maturidade dentro da equipe.</p>
+            <ul>
+              <li>Para chegar aqui: X aulas</li>
+              <li>Jogo avançado e controle</li>
+              <li>Postura exemplar</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <span class="mini-label">Faixa preta</span>
+            <h3>Excelência e responsabilidade</h3>
+            <p>Chegada ao mais alto nível da graduação, representando técnica, constância, mentalidade e compromisso com o jiu-jitsu.</p>
+            <ul>
+              <li>Para chegar aqui: X aulas</li>
+              <li>Alto domínio técnico</li>
+              <li>Referência para a equipe</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="horarios">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Horários</span>
+          <h2 class="section-title">Exemplo de grade semanal</h2>
+          <p class="section-text">
+            Aqui o site pode mostrar de forma organizada os dias e horários, ajudando o aluno a identificar rapidamente a melhor turma.
+          </p>
+        </div>
+
+        <div class="schedule-grid">
+          <article class="schedule-card">
+            <span class="mini-label">Seg • Qua • Qui</span>
+            <h3>Turma infantil</h3>
+            <p>Aulas voltadas para crianças com foco em disciplina, coordenação, respeito e desenvolvimento gradual.</p>
+            <ul>
+              <li>18h30</li>
+              <li>Segunda, quarta e quinta</li>
+              <li>Turma para crianças</li>
+            </ul>
+          </article>
+
+          <article class="schedule-card">
+            <span class="mini-label">Seg • Qua • Qui</span>
+            <h3>Turma adulto</h3>
+            <p>Horário principal para os treinos regulares de adultos, com foco em técnica, constância e evolução.</p>
+            <ul>
+              <li>19h30</li>
+              <li>Segunda, quarta e quinta</li>
+              <li>Adultos e praticantes regulares</li>
+            </ul>
+          </article>
+
+          <article class="schedule-card">
+            <span class="mini-label">Equipe competidora</span>
+            <h3>Treinos de performance</h3>
+            <p>Espaço para destacar que a equipe também compete e trabalha preparação com mentalidade de alto nível.</p>
+            <ul>
+              <li>Equipe com foco em campeonatos</li>
+              <li>Treino específico e estratégia</li>
+              <li>Ambiente de evolução competitiva</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="galeria">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Equipe competidora</span>
+          <h2 class="section-title">Galeria com alunos, pódios e medalhas</h2>
+          <p class="section-text">
+            Esta galeria foi ajustada para reforçar que a academia possui uma equipe competidora. Aqui entram fotos de campeonatos, medalhas, pódios e momentos de conquista dos alunos.
+          </p>
+        </div>
+
+        <div class="gallery-grid">
+          <article class="gallery-item" data-label="Medalhas">
+            <div class="gallery-caption">
+              <strong>Alunos medalhistas</strong>
+              <span>Fotos com medalhas, pódios e resultados de competição.</span>
+            </div>
+          </article>
+
+          <article class="gallery-item" data-label="Pódio">
+            <div class="gallery-caption">
+              <strong>Equipe em campeonatos</strong>
+              <span>Registro da presença da equipe em eventos e torneios.</span>
+            </div>
+          </article>
+
+          <article class="gallery-item" data-label="Conquistas">
+            <div class="gallery-caption">
+              <strong>Momentos de conquista</strong>
+              <span>Imagens que mostram evolução, orgulho e espírito de equipe.</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="depoimentos">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Depoimentos</span>
+          <h2 class="section-title">Prova social que aumenta a confiança</h2>
+          <p class="section-text">
+            Os depoimentos ajudam a quebrar objeções e mostram resultado real na vida dos alunos. Aqui podem entrar comentários de alunos, pais ou atletas.
+          </p>
+        </div>
+
+        <div class="testimonials">
+          <article class="testimonial">
+            <h3>Ambiente de respeito</h3>
+            <p>“Cheguei sem experiência e fui muito bem recebido. As aulas são técnicas, organizadas e o ambiente é sério, mas acolhedor.”</p>
+            <div class="author">Aluno • Depoimento exemplo</div>
+          </article>
+
+          <article class="testimonial">
+            <h3>Evolução real</h3>
+            <p>“Percebi evolução física e mental. O trabalho do professor passa confiança e motiva a continuar treinando com constância.”</p>
+            <div class="author">Aluno • Depoimento exemplo</div>
+          </article>
+
+          <article class="testimonial">
+            <h3>Treino de qualidade</h3>
+            <p>“A academia tem uma energia forte e profissional. É um lugar para quem quer aprender jiu-jitsu de verdade.”</p>
+            <div class="author">Aluno • Depoimento exemplo</div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="planos">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Planos</span>
+          <h2 class="section-title">Modelos de planos para apresentar ao cliente</h2>
+          <p class="section-text">
+            Aqui estão exemplos visuais para o site. Depois basta trocar pelos valores e regras reais da academia.
+          </p>
+        </div>
+
+        <div class="pricing-grid">
+          <article class="pricing-card">
+            <span class="mini-label">Plano básico</span>
+            <h3>2x por semana</h3>
+            <div class="price">R$ 00</div>
+            <p>Opção enxuta para quem está começando ou quer conciliar com a rotina.</p>
+            <ul>
+              <li>Até 2 treinos por semana</li>
+              <li>Acompanhamento técnico</li>
+              <li>Ambiente disciplinado</li>
+            </ul>
+          </article>
+
+          <article class="pricing-card featured">
+            <span class="mini-label">Mais procurado</span>
+            <h3>Plano mensal livre</h3>
+            <div class="price">R$ 00</div>
+            <p>Modelo ideal para alunos comprometidos com evolução constante dentro do tatame.</p>
+            <ul>
+              <li>Acesso às turmas regulares</li>
+              <li>Maior flexibilidade</li>
+              <li>Melhor custo-benefício</li>
+            </ul>
+          </article>
+
+          <article class="pricing-card">
+            <span class="mini-label">Performance</span>
+            <h3>Plano avançado</h3>
+            <div class="price">R$ 00</div>
+            <p>Perfeito para atletas e alunos com foco forte em desempenho e aperfeiçoamento.</p>
+            <ul>
+              <li>Treinos específicos</li>
+              <li>Suporte para competição</li>
+              <li>Maior intensidade técnica</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="loja">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Loja</span>
+          <h2 class="section-title">Equipe-se para começar e evoluir no jiu-jitsu</h2>
+          <p class="section-text">
+            Esta seção foi pensada para apresentar uma pequena vitrine da academia, com foco inicial em produtos essenciais para quem está entrando no esporte: kimono e faixa. A ideia é direcionar o aluno para compra em site parceiro, loja própria ou atendimento da academia.
+          </p>
+        </div>
+
+        <div class="cards-3">
+          <article class="card">
+            <span class="mini-label">Kimono</span>
+            <h3>Kimonos para treino</h3>
+            <p>
+              Espaço para indicar modelos de entrada, opções mais reforçadas e sugestões de tamanho para facilitar a escolha do aluno que está começando.
+            </p>
+            <ul>
+              <li>Modelos para iniciantes e treino regular</li>
+              <li>Orientação sobre tamanho e caimento</li>
+              <li>Link direto para compra</li>
+            </ul>
+            <div style="margin-top:18px; display:flex; gap:12px; flex-wrap:wrap;">
+              <a class="btn btn-primary" href="#">Comprar kimono</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <span class="mini-label">Faixa</span>
+            <h3>Faixas para graduação</h3>
+            <p>
+              Área para compra de faixas por cor ou categoria, permitindo ao aluno adquirir ou repor seu material com praticidade.
+            </p>
+            <ul>
+              <li>Faixa branca, azul, roxa, marrom e preta</li>
+              <li>Opções infantil e adulto</li>
+              <li>Indicação prática para reposição</li>
+            </ul>
+            <div style="margin-top:18px; display:flex; gap:12px; flex-wrap:wrap;">
+              <a class="btn btn-primary" href="#">Comprar faixa</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <span class="mini-label">Loja parceira</span>
+            <h3>Compra guiada para novos alunos</h3>
+            <p>
+              Ideal para direcionar o visitante a uma loja parceira, página externa ou atendimento interno, facilitando o início da jornada no jiu-jitsu.
+            </p>
+            <ul>
+              <li>Vitrine simples e objetiva</li>
+              <li>Conversão para parceiros ou loja própria</li>
+              <li>Ajuda quem está começando</li>
+            </ul>
+            <div style="margin-top:18px; display:flex; gap:12px; flex-wrap:wrap;">
+              <a class="btn btn-secondary" href="#contato">Falar com a academia</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="faq">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Perguntas frequentes</span>
+          <h2 class="section-title">Dúvidas comuns de novos alunos</h2>
+          <p class="section-text">
+            Essa área ajuda na conversão porque responde objeções antes mesmo do visitante entrar em contato.
+          </p>
+        </div>
+
+        <div class="faq-grid">
+          <article class="faq-item">
+            <h3>Preciso ter experiência para começar?</h3>
+            <p>Não. O ideal é ter uma turma ou metodologia para iniciantes, com acompanhamento técnico e adaptação gradual ao treino.</p>
+          </article>
+
+          <article class="faq-item">
+            <h3>Posso fazer aula experimental?</h3>
+            <p>Sim. O site pode destacar esse convite como principal chamada para ação, facilitando o primeiro contato pelo WhatsApp.</p>
+          </article>
+
+          <article class="faq-item">
+            <h3>Tem treino para quem busca defesa pessoal?</h3>
+            <p>Sim. O jiu-jitsu pode ser apresentado também como ferramenta de autoconfiança, disciplina e defesa pessoal prática.</p>
+          </article>
+
+          <article class="faq-item">
+            <h3>O que levar no primeiro treino?</h3>
+            <p>O site pode informar vestimenta adequada, horário de chegada e orientações básicas para deixar o novo aluno mais seguro.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="area-aluno">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Área do aluno</span>
+          <h2 class="section-title">Prévia visual do web app da academia</h2>
+          <p class="section-text">
+            Aqui está uma demonstração de escopo para o cliente entender que o projeto pode evoluir para um sistema interno com login, controle de presença, faixa, idade, histórico e acompanhamento da evolução dos alunos.
+          </p>
+        </div>
+
+        <div class="student-showcase">
+          <div class="login-mock">
+            <div class="login-topbar">
+              <div>
+                <strong style="display:block; color: var(--gold);">Portal do aluno</strong>
+                <span style="color: var(--muted); font-size: 0.92rem;">Acesso restrito para alunos e administração</span>
+              </div>
+              <span class="login-pill">Escopo visual</span>
+            </div>
+
+            <div class="mock-field">
+              <label>E-mail do aluno</label>
+              <div class="mock-input">aluno@exemplo.com</div>
+            </div>
+
+            <div class="mock-field">
+              <label>Senha</label>
+              <div class="mock-input">••••••••••</div>
+            </div>
+
+            <div class="mock-actions">
+              <a href="#" class="btn btn-primary">Entrar na área do aluno</a>
+              <a href="#" class="btn btn-secondary">Recuperar acesso</a>
+            </div>
+
+            <p class="student-note">
+              Demonstração de uma área que poderá ser integrada com PostgreSQL para cadastro, login, relatórios, controle de presença, acompanhamento de graduação e gestão interna.
+            </p>
+          </div>
+
+          <div class="dashboard-mock">
+            <div class="student-banner">
+              <strong>Dashboard da academia</strong>
+              <p style="color: var(--muted); margin: 0;">Visão geral pensada para exibir informações estratégicas dos alunos e facilitar o controle interno da equipe.</p>
+            </div>
+
+            <div class="dash-grid">
+              <article class="dash-card">
+                <span>Alunos ativos</span>
+                <strong>128</strong>
+                <p>Controle geral de alunos cadastrados.</p>
+              </article>
+              <article class="dash-card">
+                <span>Presenças no mês</span>
+                <strong>742</strong>
+                <p>Monitoramento de frequência por turma.</p>
+              </article>
+              <article class="dash-card">
+                <span>Turmas</span>
+                <strong>04</strong>
+                <p>Separação por faixa etária e objetivo.</p>
+              </article>
+              <article class="dash-card">
+                <span>Graduações futuras</span>
+                <strong>12</strong>
+                <p>Alunos próximos da próxima etapa.</p>
+              </article>
+            </div>
+
+            <div class="student-table">
+              <div class="table-head">
+                <div>Aluno</div>
+                <div>Faixa</div>
+                <div>Idade</div>
+                <div>Status</div>
+              </div>
+
+              <div class="table-row">
+                <div>Lucas Ferreira</div>
+                <div><span class="belt-tag">Branca</span></div>
+                <div>14 anos</div>
+                <div><span class="status-ok">Presença em dia</span></div>
+              </div>
+
+              <div class="table-row">
+                <div>Matheus Silva</div>
+                <div><span class="belt-tag">Azul</span></div>
+                <div>23 anos</div>
+                <div><span class="status-ok">Treinando ativo</span></div>
+              </div>
+
+              <div class="table-row">
+                <div>João Batista</div>
+                <div><span class="belt-tag">Roxa</span></div>
+                <div>31 anos</div>
+                <div><span class="status-warn">Próx. graduação</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div style="height: 28px;"></div>
+
+        <div class="section-head">
+          <span class="eyebrow">Painel administrativo</span>
+          <h2 class="section-title">Escopo completo da gestão interna da academia</h2>
+          <p class="section-text">
+            Esta parte foi desenhada para vender a ideia do sistema ao cliente: um painel robusto, organizado e escalável para a administração do dia a dia da academia.
+          </p>
+        </div>
+
+        <div class="admin-preview">
+          <aside class="admin-sidebar">
+            <div class="admin-brand">
+              <div class="admin-dot"></div>
+              <div>
+                <strong style="display:block; color: var(--gold);">Painel GBJJ</strong>
+                <span style="color: var(--muted); font-size: 0.9rem;">Gestão da academia em um só lugar</span>
+              </div>
+            </div>
+
+            <div class="admin-menu">
+              <div class="admin-menu-item"><strong>Dashboard</strong><span class="nav-chip">Home</span></div>
+              <div class="admin-menu-item"><strong>Cadastro de alunos</strong><span class="nav-chip">128</span></div>
+              <div class="admin-menu-item"><strong>Controle de presença</strong><span class="nav-chip">Hoje</span></div>
+              <div class="admin-menu-item"><strong>Graduações</strong><span class="nav-chip">12</span></div>
+              <div class="admin-menu-item"><strong>Turmas e horários</strong><span class="nav-chip">04</span></div>
+              <div class="admin-menu-item"><strong>Relatórios</strong><span class="nav-chip">PDF</span></div>
+              <div class="admin-menu-item"><strong>Competidores</strong><span class="nav-chip">Equipe</span></div>
+              <div class="admin-menu-item"><strong>Financeiro futuro</strong><span class="nav-chip">Plus</span></div>
+            </div>
+
+            <div class="admin-widget">
+              <h4>Visão de expansão</h4>
+              <p>O sistema pode começar com presença, cadastro e graduação, e depois evoluir para mensalidades, notificações, área dos pais e relatórios avançados.</p>
+              <div class="mini-bar"><span style="width: 78%;"></span></div>
+            </div>
+          </aside>
+
+          <div class="admin-content">
+            <div class="admin-topbar">
+              <div>
+                <strong style="display:block; color: var(--gold); font-size: 1.12rem;">Painel geral da administração</strong>
+                <p>Uma visão pronta para diretoria, professor e recepção acompanharem os principais indicadores.</p>
+              </div>
+              <div class="admin-top-actions">
+                <a href="#" class="btn btn-secondary">Exportar relatório</a>
+                <a href="#" class="btn btn-primary">Cadastrar novo aluno</a>
+              </div>
+            </div>
+
+            <div class="feature-grid">
+              <article class="dash-card">
+                <span>Total de alunos</span>
+                <strong>128</strong>
+                <p>Ativos e acompanhados no sistema.</p>
+              </article>
+              <article class="dash-card">
+                <span>Crianças</span>
+                <strong>36</strong>
+                <p>Turma infantil cadastrada.</p>
+              </article>
+              <article class="dash-card">
+                <span>Adultos</span>
+                <strong>92</strong>
+                <p>Treino regular e graduação.</p>
+              </article>
+              <article class="dash-card">
+                <span>Competidores</span>
+                <strong>24</strong>
+                <p>Equipe focada em campeonatos.</p>
+              </article>
+            </div>
+
+            <div class="report-grid">
+              <article class="report-card">
+                <strong>Relatório de frequência</strong>
+                <p>Visualização por aluno, por turma e por período, facilitando decisões sobre constância, engajamento e acompanhamento técnico.</p>
+                <div class="mini-bar"><span style="width: 82%;"></span></div>
+              </article>
+              <article class="report-card">
+                <strong>Relatório de graduação</strong>
+                <p>Mostra quem está próximo de avançar de faixa, quantas aulas acumulou e quais critérios ainda faltam cumprir.</p>
+                <div class="mini-bar"><span style="width: 68%;"></span></div>
+              </article>
+              <article class="report-card">
+                <strong>Relatório por categoria</strong>
+                <p>Separação por idade, nível, turma infantil, turma adulta e alunos da equipe competidora.</p>
+                <div class="mini-bar"><span style="width: 74%;"></span></div>
+              </article>
+            </div>
+
+            <div class="student-table">
+              <div class="table-head">
+                <div>Aluno</div>
+                <div>Faixa</div>
+                <div>Idade</div>
+                <div>Status</div>
+              </div>
+              <div class="table-row">
+                <div>Ana Clara</div>
+                <div><span class="belt-tag">Branca</span></div>
+                <div>10 anos</div>
+                <div><span class="status-ok">Infantil ativa</span></div>
+              </div>
+              <div class="table-row">
+                <div>Gustavo Rocha</div>
+                <div><span class="belt-tag">Azul</span></div>
+                <div>19 anos</div>
+                <div><span class="status-ok">Competidor</span></div>
+              </div>
+              <div class="table-row">
+                <div>Rafael Mendes</div>
+                <div><span class="belt-tag">Marrom</span></div>
+                <div>29 anos</div>
+                <div><span class="status-warn">Graduação próxima</span></div>
+              </div>
+              <div class="table-row">
+                <div>Pedro Henrique</div>
+                <div><span class="belt-tag">Branca</span></div>
+                <div>34 anos</div>
+                <div><span class="status-ok">Presença regular</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div style="height: 28px;"></div>
+
+        <div class="section-head">
+          <span class="eyebrow">Funcionalidades pensadas</span>
+          <h2 class="section-title">O que o sistema pode entregar na prática</h2>
+          <p class="section-text">
+            A ideia aqui é mostrar escopo. Você apresenta estas áreas ao cliente para validar o produto antes de desenvolver a versão funcional.
+          </p>
+        </div>
+
+        <div class="student-journey">
+          <article class="journey-card">
+            <h4>Cadastro completo de alunos</h4>
+            <strong>Ficha individual organizada</strong>
+            <p>Nome, idade, faixa, observações, contato, responsável, categoria, turma, histórico de presença e status de evolução.</p>
+          </article>
+          <article class="journey-card">
+            <h4>Controle de presença</h4>
+            <strong>Registro por aula e por turma</strong>
+            <p>Marcação rápida de presença nas aulas de segunda, quarta e quinta, com visão consolidada por aluno e por período.</p>
+          </article>
+          <article class="journey-card">
+            <h4>Gestão de graduação</h4>
+            <strong>Acompanhamento por aulas</strong>
+            <p>Contagem de aulas e indicadores visuais para a evolução da branca até a preta, ajudando o professor na organização.</p>
+          </article>
+        </div>
+
+        <div class="presence-grid">
+          <article class="presence-card">
+            <h4>Check-in diário</h4>
+            <strong>Entrada rápida no tatame</strong>
+            <p>Fluxo prático para marcar presença do aluno no início da aula, tanto infantil quanto adulto.</p>
+            <div style="margin-top:14px;"><span class="presence-tag">Seg • Qua • Qui</span></div>
+          </article>
+          <article class="presence-card">
+            <h4>Controle por turma</h4>
+            <strong>18h30 e 19h30 separados</strong>
+            <p>Divisão clara entre a turma infantil e a turma adulta, melhorando a organização da rotina da academia.</p>
+            <div style="margin-top:14px;"><span class="presence-tag">Infantil e Adulto</span></div>
+          </article>
+          <article class="presence-card">
+            <h4>Histórico do aluno</h4>
+            <strong>Evolução visível</strong>
+            <p>Consulta do total de aulas, faltas, frequência recente e proximidade da próxima graduação.</p>
+            <div style="margin-top:14px;"><span class="presence-tag">Acompanhamento</span></div>
+          </article>
+        </div>
+
+        <div style="height: 28px;"></div>
+
+        <div class="section-head">
+          <span class="eyebrow">Fluxo de graduação</span>
+          <h2 class="section-title">Linha visual da evolução do adulto</h2>
+          <p class="section-text">
+            Esta versão serve para o cliente enxergar com clareza como a academia pode apresentar a evolução por faixas de forma organizada e profissional.
+          </p>
+        </div>
+
+        <div class="belt-roadmap">
+          <article class="roadmap-card">
+            <div class="belt-badge" style="background:#f1f1f1;"></div>
+            <strong>Faixa Branca</strong>
+            <p>Entrada no jiu-jitsu com foco em base, comportamento, defesa e adaptação.</p>
+            <h4>X aulas</h4>
+          </article>
+          <article class="roadmap-card">
+            <div class="belt-badge" style="background:#355fdb;"></div>
+            <strong>Faixa Azul</strong>
+            <p>Consolidação técnica, maior repertório e evolução consistente.</p>
+            <h4>X aulas</h4>
+          </article>
+          <article class="roadmap-card">
+            <div class="belt-badge" style="background:#5b3ea6;"></div>
+            <strong>Faixa Roxa</strong>
+            <p>Mais leitura de jogo, autonomia e refinamento técnico.</p>
+            <h4>X aulas</h4>
+          </article>
+          <article class="roadmap-card">
+            <div class="belt-badge" style="background:#5b3923;"></div>
+            <strong>Faixa Marrom</strong>
+            <p>Lapidação de alto nível, pressão, estratégia e maturidade.</p>
+            <h4>X aulas</h4>
+          </article>
+          <article class="roadmap-card">
+            <div class="belt-badge" style="background:#111111; border-color: rgba(212,176,106,0.35);"></div>
+            <strong>Faixa Preta</strong>
+            <p>Excelência técnica, responsabilidade e referência para a equipe.</p>
+            <h4>X aulas</h4>
+          </article>
+        </div>
+
+        <div style="height: 28px;"></div>
+
+        <div class="section-head">
+          <span class="eyebrow">Etapas do projeto</span>
+          <h2 class="section-title">Como vender a evolução do sistema ao cliente</h2>
+          <p class="section-text">
+            Esse bloco ajuda a mostrar que o projeto pode começar institucional e crescer por fases, sem precisar entregar tudo funcional de uma vez.
+          </p>
+        </div>
+
+        <div class="timeline-grid">
+          <article class="timeline-card">
+            <div class="timeline-step">1</div>
+            <strong>Site institucional</strong>
+            <p>Marca, professor, turmas, horários, galeria, contato e presença digital forte.</p>
+          </article>
+          <article class="timeline-card">
+            <div class="timeline-step">2</div>
+            <strong>Login de alunos</strong>
+            <p>Área restrita com autenticação para acesso individual e histórico.</p>
+          </article>
+          <article class="timeline-card">
+            <div class="timeline-step">3</div>
+            <strong>Painel administrativo</strong>
+            <p>Cadastro, presença, graduações, competidores e relatórios em PostgreSQL.</p>
+          </article>
+          <article class="timeline-card">
+            <div class="timeline-step">4</div>
+            <strong>Expansões futuras</strong>
+            <p>Financeiro, notificações, mensalidades, área dos pais e ranking interno.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contato">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Contato e localização</span>
+          <h2 class="section-title">Facilite o primeiro passo do aluno</h2>
+          <p class="section-text">
+            Uma parte essencial do site. Pode ser conectada ao WhatsApp, Instagram, mapa, formulário e endereço da academia.
+          </p>
+        </div>
+
+        <div class="contact-grid">
+          <div class="contact-card">
+            <span class="mini-label">Informações principais</span>
+            <h3>Fale com a academia</h3>
+            <p>Substitua os dados abaixo pelos contatos oficiais da academia.</p>
+            <ul class="contact-list">
+              <li><strong>WhatsApp:</strong> (00) 00000-0000</li>
+              <li><strong>Instagram:</strong> @gilsonbatistabjj</li>
+              <li><strong>E-mail:</strong> contato@academia.com.br</li>
+              <li><strong>Endereço:</strong> Rua Exemplo, 123 • Bairro • Cidade/UF</li>
+              <li><strong>Referência:</strong> Próximo a [inserir ponto de referência]</li>
+            </ul>
+            <div style="display:flex; gap:14px; flex-wrap:wrap; margin-top:22px;">
+              <a class="btn btn-primary" href="#">Chamar no WhatsApp</a>
+              <a class="btn btn-secondary" href="#">Ver no Instagram</a>
+            </div>
+          </div>
+
+          <div class="map-box">
+            <div>
+              <span class="mini-label">Mapa / localização</span>
+              <h3 style="color: var(--gold); margin-bottom: 10px; font-size: 1.18rem;">Espaço para mapa incorporado</h3>
+              <p style="color: var(--muted);">
+                Aqui pode entrar o Google Maps incorporado com endereço da academia, facilitando a visita e melhorando a confiança do usuário.
+              </p>
+            </div>
+            <div class="map-preview">Mapa da academia</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section cta-section">
+      <div class="container">
+        <div class="cta-box">
+          <div>
+            <span class="eyebrow">Chamada final</span>
+            <h3>Pronto para transformar este conceito em um site real e profissional?</h3>
+            <p>
+              Essa base já mostra o caminho visual, a hierarquia de informações e os blocos principais que o cliente precisa aprovar para seguir com o projeto.
+            </p>
+          </div>
+          <div class="cta-actions">
+            <a href="#contato" class="btn btn-primary">Solicitar orçamento</a>
+            <a href="#inicio" class="btn btn-secondary">Voltar ao topo</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <strong style="color: var(--gold); display:block; margin-bottom:6px;">Gilson Batista Jiu-Jitsu</strong>
+        <span>Base conceitual de site com visual premium para apresentação ao cliente.</span>
+      </div>
+      <div>
+        <span>© 2026 • Estrutura demonstrativa • Todos os direitos reservados</span>
+      </div>
+    </div>
+  </footer>
+
+  <div class="floating-whatsapp">
+    <a href="#contato" aria-label="WhatsApp">W</a>
+  </div>
+</body>
+</html>
